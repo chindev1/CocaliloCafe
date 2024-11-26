@@ -32,34 +32,60 @@ public class HelloController {
     double cappuccinoValores = 2.50, cafeValores = 3, aguaValores = 4, cocaValores = 4;
     double morangueteValores = 0.6, sonhoValores = 1.5, carolinaValores = 3.5, cupcakeValores = 5;
 
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+
+    String metodoPag = "";
     //MENU CARDAPIOS
     @FXML
     public void menuBtnClick(ActionEvent actionEvent){
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stageMenuClick = new Stage();
-            stageMenuClick.setTitle("Menu Cardapios");
-            stageMenuClick.setScene(new Scene(root));
+            root = FXMLLoader.load(getClass().getResource("menu-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            stage.setTitle("Cardápios");
+            stage.setScene(new Scene(root));
             // Exibir a nova janela
-            stageMenuClick.show();
+            stage.show();
+
             System.out.println(this.valorTotal);
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }
+
+    @FXML private Label valorTotalLabel;
+    public void valorTotalLabel(){
+
+        int valor = FileManager.loadValue();
+        if (valor != -1) {
+            System.out.println("Valor carregado: " + valor);
+        } else {
+            System.out.println("Falha ao carregar o valor.");
+        }
+
+        valorTotalLabel.setText("R$: " + valor);
+    }
+
     //CARADAPIO DOS DOCES
     @FXML
     public void docesBtnClick(ActionEvent actionEvent) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("doces-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage salgsBtnClick = new Stage();
-            salgsBtnClick.setTitle("Cardápio de Doces");
-            salgsBtnClick.setScene(new Scene(root));
+            root = FXMLLoader.load(getClass().getResource("doces-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            stage.setTitle("Cardápio de Doces");
+            stage.setScene(new Scene(root));
             // Exibir a nova janela
-            salgsBtnClick.show();
+            stage.show();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -113,13 +139,17 @@ public class HelloController {
             System.out.println("Falha ao carregar o valor.");
         }
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("salgs-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage salgsBtnClick = new Stage();
-            salgsBtnClick.setTitle("Cardápio de Salgados");
-            salgsBtnClick.setScene(new Scene(root));
+            root = FXMLLoader.load(getClass().getResource("salgs-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            stage.setTitle("Cardápio de Salgados");
+            stage.setScene(new Scene(root));
             // Exibir a nova janela
-            salgsBtnClick.show();
+            stage.show();
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -168,13 +198,17 @@ public class HelloController {
     //CARDAPIO DAS BEBIDAS
     @FXML
     public void bebsBtnClick(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("bebs-view.fxml"));
-        Parent root = fxmlLoader.load();
+        root = FXMLLoader.load(getClass().getResource("bebs-view.fxml"));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
-        Stage bebsBtnClick = new Stage();
-        bebsBtnClick.setTitle("Cardápio de Bebidas");
-        bebsBtnClick.setScene(new Scene(root));
-        bebsBtnClick.show();
+        stage.setTitle("Cardápio de Bebidas");
+        stage.setScene(new Scene(root));
+        // Exibir a nova janela
+        stage.show();
+
     }
     public void cocaBtnClick(ActionEvent actionEvent){
 
@@ -213,41 +247,102 @@ public class HelloController {
         valoresBebsLabel.setText("R$:" + valorTotalBebsStr);
     }
     //FINALIZAR COMPRA
-    @FXML
-    private Label valorTotalLabel;
-    public void valorTotalLabel(){
 
-        int valor = FileManager.loadValue();
-        if (valor != -1) {
-            System.out.println("Valor carregado: " + valor);
-        } else {
-            System.out.println("Falha ao carregar o valor.");
-        }
 
-        valorTotalLabel.setText("R$: " + valor);
-    }
     public void finalizarBtnClick(ActionEvent actionEvent){
+
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("finalizar-view.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stageFinalizarClick = new Stage();
-            stageFinalizarClick.setTitle("Finalizar Compra");
-            stageFinalizarClick.setScene(new Scene(root));
+            root = FXMLLoader.load(getClass().getResource("finalizar-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+            stage.setTitle("Finalizar Compra");
+            stage.setScene(new Scene(root));
+
             // Exibir a nova janela
-            stageFinalizarClick.show();
+            stage.show();
+
 
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }
+    public void credBtnClick(ActionEvent actionEvent){
+        metodoPag = "Credito";
+        try {
+            root = FXMLLoader.load(getClass().getResource("fimcompra-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            stage.setTitle("Fim da Compra");
+            stage.setScene(new Scene(root));
 
-    @FXML
-    public void fecharJanela(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
+            // Exibir a nova janela
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+    public void debBtnClick(ActionEvent actionEvent){
+        metodoPag = "Débito";;
+        try {
+            root = FXMLLoader.load(getClass().getResource("fimcompra-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            stage.setTitle("Fim da Compra");
+            stage.setScene(new Scene(root));
 
+            // Exibir a nova janela
+            stage.show();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void pixBtnClick(ActionEvent actionEvent){
+        metodoPag = "Pix";
+        try {
+            root = FXMLLoader.load(getClass().getResource("fimcompra-view.fxml"));
+            stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+            stage.setTitle("Fim da Compra");
+            stage.setScene(new Scene(root));
+
+
+            // Exibir a nova janela
+            stage.show();
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML private Label fimCompra;
+    public void fimCompra(){
+        System.out.println(metodoPag);
+        fimCompra.setText("Compra finalizada como: " + metodoPag + " no valor de: " + valorTotal);
+    }
+    @FXML
+    public void fecharJanela(ActionEvent actionEvent) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("menu-view.fxml"));
+        stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+        stage.setTitle("Cardapios");
+        stage.setScene(new Scene(root));
+        // Exibir a nova janela
+        stage.show();
+    }
     public void btnDocesEntered(MouseEvent mouseEvent) {
     }
 
