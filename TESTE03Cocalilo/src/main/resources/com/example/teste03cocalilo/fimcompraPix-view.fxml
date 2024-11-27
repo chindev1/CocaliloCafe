@@ -17,9 +17,9 @@
             <Font name="Comic Sans MS" size="16.0" />
          </font>
       </JFXButton>
-      <VBox alignment="TOP_CENTER" layoutX="154.0" layoutY="149.0" prefHeight="78.0" prefWidth="332.0" style="-fx-background-color: #6c4e75; -fx-background-radius: 15;" styleClass="vboxBorder" stylesheets="@view-buttons.css">
+      <VBox alignment="TOP_CENTER" layoutX="154.0" layoutY="126.0" prefHeight="119.0" prefWidth="332.0" style="-fx-background-color: #6c4e75; -fx-background-radius: 15;" styleClass="vboxBorder" stylesheets="@view-buttons.css">
          <children>
-            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="304.0" text="Compra finalizada no valor de:" textFill="WHITE">
+            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="304.0" text="Finalizar compra no valor de:" textFill="WHITE">
                <font>
                   <Font name="Sitka Text Bold" size="19.0" />
                </font>
@@ -30,6 +30,11 @@
             <Label text="R$ 30,00" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="304.0" text="Chave pix: 41996721978" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Text Bold" size="19.0" />
                </font>
             </Label>
          </children>

@@ -130,5 +130,10 @@
             </Label>
          </children>
       </VBox>
+      <JFXButton layoutX="487.0" layoutY="326.0" onAction="#salgsBtnClick" prefHeight="42.0" prefWidth="97.0" styleClass="btnHover" stylesheets="@view-buttons.css" text="Avançar" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="16.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

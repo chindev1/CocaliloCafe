@@ -15,14 +15,15 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu-inicial-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 640, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("Cocalilo");
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.setScene(scene);
         stage.show();
     }
+
     public static void main(String[] args) {
-        int teste = 0 ;
+
         launch(args);
     }
 }

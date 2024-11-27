@@ -21,7 +21,6 @@ public class HelloController {
 
     ValoresData data = new ValoresData();
     //VARIAVEIS
-
     double docesValTotal = 0, salgsValTotal = 0, bebsValTotal = 0;
     int valorTotal = 0;
     int carolina, sonho, moranguete, cupcake;
@@ -35,11 +34,12 @@ public class HelloController {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
-    String metodoPag = "";
+    String metodoPag = " ";
     //MENU CARDAPIOS
+
     @FXML
     public void menuBtnClick(ActionEvent actionEvent){
+
         try {
             root = FXMLLoader.load(getClass().getResource("menu-view.fxml"));
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -72,6 +72,14 @@ public class HelloController {
         valorTotalLabel.setText("R$: " + valor);
     }
 
+    String[] metodo;
+    public void vetorMetodo(){
+        metodo = new String[3];
+        metodo[0] = "Debito";
+        metodo[1] = "Credito";
+        metodo[2] = "Pix";
+
+    }
     //CARADAPIO DOS DOCES
     @FXML
     public void docesBtnClick(ActionEvent actionEvent) {
@@ -127,7 +135,7 @@ public class HelloController {
 
         String valorTotalDocesStr = String.valueOf(this.docesValTotal);
         HelloController control = new HelloController();
-        valoresDocesLabel.setText("R$:" + valorTotalDocesStr);
+        valoresDocesLabel.setText("R$: " + valorTotalDocesStr);
     }
     //CARDAPIO DOS SALGADOS
     @FXML
@@ -193,7 +201,7 @@ public class HelloController {
     public void valoresSalgsLabel() {
         String valorTotalSalgsStr = String.valueOf(salgsValTotal);
         HelloController control = new HelloController();
-        valoresSalgsLabel.setText("R$:" + valorTotalSalgsStr);
+        valoresSalgsLabel.setText("R$: " + valorTotalSalgsStr);
     }
     //CARDAPIO DAS BEBIDAS
     @FXML
@@ -206,6 +214,8 @@ public class HelloController {
 
         stage.setTitle("Cardápio de Bebidas");
         stage.setScene(new Scene(root));
+
+
         // Exibir a nova janela
         stage.show();
 
@@ -244,13 +254,10 @@ public class HelloController {
     public void valoresBebsLabel(){
         String valorTotalBebsStr = String.valueOf(bebsValTotal);
         HelloController control = new HelloController();
-        valoresBebsLabel.setText("R$:" + valorTotalBebsStr);
+        valoresBebsLabel.setText("R$: " + valorTotalBebsStr);
     }
     //FINALIZAR COMPRA
-
-
     public void finalizarBtnClick(ActionEvent actionEvent){
-
         try {
             root = FXMLLoader.load(getClass().getResource("finalizar-view.fxml"));
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -271,7 +278,8 @@ public class HelloController {
         }
     }
     public void credBtnClick(ActionEvent actionEvent){
-        metodoPag = "Credito";
+
+
         try {
             root = FXMLLoader.load(getClass().getResource("fimcompra-view.fxml"));
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -289,7 +297,7 @@ public class HelloController {
         }
     }
     public void debBtnClick(ActionEvent actionEvent){
-        metodoPag = "Débito";;
+
         try {
             root = FXMLLoader.load(getClass().getResource("fimcompra-view.fxml"));
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -301,15 +309,16 @@ public class HelloController {
 
             // Exibir a nova janela
             stage.show();
+
         }
         catch (IOException e) {
             e.printStackTrace();
         }
     }
     public void pixBtnClick(ActionEvent actionEvent){
-        metodoPag = "Pix";
+
         try {
-            root = FXMLLoader.load(getClass().getResource("fimcompra-view.fxml"));
+            root = FXMLLoader.load(getClass().getResource("fimcompraPix-view.fxml"));
             stage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
@@ -343,7 +352,11 @@ public class HelloController {
         // Exibir a nova janela
         stage.show();
     }
-    public void btnDocesEntered(MouseEvent mouseEvent) {
+    public void fechar(ActionEvent actionEvent) {
+        Stage stage = (Stage) ((javafx.scene.Node) actionEvent.getSource()).getScene().getWindow();
+        stage.close();
     }
 
+    public void btnDocesEntered(MouseEvent mouseEvent) {
+    }
 }

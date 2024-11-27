@@ -17,7 +17,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <Label fx:id="fimCompra" alignment="CENTER" prefHeight="38.0" prefWidth="157.0" textAlignment="CENTER" textFill="WHITE">
+            <Label fx:id="fimCompra" alignment="CENTER" prefHeight="38.0" prefWidth="157.0" text="R$ 30,00" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="26.0" />
                </font>
