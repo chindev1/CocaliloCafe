@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #503459;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste03cocalilo.HelloController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c8f5cb" height="119.0" layoutX="494.0" layoutY="66.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" style="-fx-rotate: 30;" width="128.0" />
+      <VBox layoutX="271.0" layoutY="304.0" prefHeight="39.0" prefWidth="97.0" style="-fx-background-color: #6c4e75; -fx-background-radius: 15;" stylesheets="@view-buttons.css" />
+      <JFXButton layoutX="271.0" layoutY="302.0" onAction="#fechar" prefHeight="42.0" prefWidth="97.0" styleClass="btnHover" stylesheets="@view-buttons.css" text="Sair" textFill="WHITE">
+         <font>
+            <Font name="Comic Sans MS" size="16.0" />
+         </font>
+      </JFXButton>
+      <VBox alignment="TOP_CENTER" layoutX="154.0" layoutY="126.0" prefHeight="119.0" prefWidth="332.0" style="-fx-background-color: #6c4e75; -fx-background-radius: 15;" styleClass="vboxBorder" stylesheets="@view-buttons.css">
+         <children>
+            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="304.0" text="Finalizar compra no valor de:" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Text Bold" size="19.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="R$ 30,00" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" prefHeight="35.0" prefWidth="304.0" text="Chave pix: 41996721978" textFill="WHITE">
+               <font>
+                  <Font name="Sitka Text Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

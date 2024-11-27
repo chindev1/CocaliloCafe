@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CocaliloCafe.iml" filepath="$PROJECT_DIR$/.idea/CocaliloCafe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/terminalCocalilo/terminalCocalilo.iml" filepath="$PROJECT_DIR$/terminalCocalilo/terminalCocalilo.iml" />
     </modules>
   </component>
 </project>

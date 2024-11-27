@@ -10,7 +10,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="581.0" style="-fx-background-color: #493c4d; -fx-border-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.teste03cocalilo.HelloController">
    <children>
-      <VBox layoutX="232.0" layoutY="143.0" prefHeight="230.0" prefWidth="118.0" spacing="5.0" style="-fx-background-color: #6c4e75; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;">
+      <VBox layoutX="368.0" layoutY="145.0" prefHeight="73.0" prefWidth="111.0" />
+      <VBox layoutX="232.0" layoutY="145.0" prefHeight="230.0" prefWidth="118.0" spacing="5.0" style="-fx-background-color: #6c4e75; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;">
          <children>
             <JFXButton fx:id="docesBtn" onAction="#docesBtnClick" prefHeight="39.0" prefWidth="111.0" styleClass="btnHover" stylesheets="@view-buttons.css" text="DOCES" textFill="WHITE">
                <VBox.margin>
@@ -44,7 +45,7 @@
                   <Font name="Comic Sans MS Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton alignment="CENTER" contentDisplay="CENTER" onAction="#fecharJanela" onMouseEntered="#btnDocesEntered" prefHeight="39.0" prefWidth="111.0" styleClass="btnHover" stylesheets="@view-buttons.css" text="SAIR" textAlignment="CENTER" textFill="WHITE">
+            <JFXButton alignment="CENTER" contentDisplay="CENTER" onAction="#fechar" onMouseEntered="#btnDocesEntered" prefHeight="39.0" prefWidth="111.0" styleClass="btnHover" stylesheets="@view-buttons.css" text="SAIR" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold" size="15.0" />
                </font>
@@ -54,14 +55,14 @@
             </JFXButton>
          </children>
       </VBox>
-      <VBox layoutX="178.0" layoutY="42.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: #6d5973; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;">
+      <VBox layoutX="177.0" layoutY="47.0" prefHeight="80.0" prefWidth="227.0" style="-fx-background-color: #6d5973; -fx-background-radius: 15; -fx-border-color: black; -fx-border-radius: 15;">
          <children>
             <Label prefHeight="58.0" prefWidth="225.0" text="Cocalilo's Cafe" textAlignment="JUSTIFY" textFill="WHITE">
                <font>
                   <Font name="Sitka Heading Bold Italic" size="34.0" />
                </font>
                <VBox.margin>
-                  <Insets left="10.0" top="5.0" />
+                  <Insets left="5.0" top="5.0" />
                </VBox.margin>
             </Label>
          </children>
